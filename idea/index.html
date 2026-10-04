@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marco Integral de Trabajo con IA · Amaterra Consultoría Agrosocial</title>
+  <meta name="description" content="Estrategia, gobernanza, sistema editorial y herramientas interactivas de IA para el equipo de Amaterra Consultoría Agrosocial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Progress Bar at the top -->
+    <div id="presentation-progress-bar" class="presentation-progress-bar" style="width: 11.1%;"></div>
+
+    <!-- PRESENTATION MODE (VISTA PRINCIPAL) -->
+    <div class="presentation-overlay active" id="presentation-overlay" style="display: flex;">
+      <div id="presentation-slide-content" class="presentation-slide-wrapper">
+        <!-- Injected slide -->
+      </div>
+      <div class="presentation-controls">
+        <button class="btn btn-outline" style="padding: 0.4rem 0.85rem;" onclick="AmaterraApp.exportTools.prevSlide()" title="Diapositiva anterior (o flecha izquierda)">◀ Anterior</button>
+        <span id="presentation-slide-num" style="display: flex; align-items: center; font-weight: 700; font-size: 0.9rem; color: #a7f3d0; padding: 0 0.5rem;">1 / 9</span>
+        <button class="btn btn-primary" style="padding: 0.4rem 0.85rem;" onclick="AmaterraApp.exportTools.nextSlide()" title="Siguiente diapositiva (o Espacio/flecha derecha)">Siguiente ▶</button>
+        <button class="btn btn-outline" style="padding: 0.4rem 0.85rem;" onclick="AmaterraApp.exportTools.restart()" title="Reiniciar al inicio (tecla R)">🔄 Reiniciar</button>
+      </div>
+      <div class="presentation-nav-hint">
+        <span>Navega con <strong>[←] [→]</strong> o <strong>[Espacio]</strong></span>
+      </div>
+    </div>
+
+    <!-- DASHBOARD VIEW (Oculto para el equipo por ahora) -->
+    <div id="dashboard-view" style="display: none;">
+      <!-- Header -->
+      <header class="app-header">
+        <a href="#" class="brand-badge" onclick="AmaterraApp.switchTab('overview')">
+          <div class="brand-logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">AMATERRA</span>
+            <span class="brand-subtitle">Consultoría Agrosocial · Marco IA</span>
+          </div>
+        </a>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav-tab-list">
+          <li><button class="nav-tab-btn active" data-tab="overview">🌟 Estrategia</button></li>
+          <li><button class="nav-tab-btn" data-tab="maturity">📶 3 Niveles</button></li>
+          <li><button class="nav-tab-btn" data-tab="editorial">📐 Sistema Editorial</button></li>
+          <li><button class="nav-tab-btn" data-tab="pipeline">🎙️ Pipeline Audio</button></li>
+          <li><button class="nav-tab-btn" data-tab="decision">🧭 Árbol de Decisión</button></li>
+          <li><button class="nav-tab-btn" data-tab="governance">🚦 Semáforo Datos</button></li>
+          <li><button class="nav-tab-btn" data-tab="roles">👥 Roles & Ágil</button></li>
+          <li><button class="nav-tab-btn" data-tab="roadmap">🗺️ Roadmap & Taller</button></li>
+        </ul>
+
+        <div class="header-actions">
+          <button class="btn btn-primary" onclick="AmaterraApp.openPresentation()">📽️ Presentación</button>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- 1. OVERVIEW & STRATEGIC VISION -->
+        <section id="section-overview" class="view-section active">
+          <div class="golden-rule-banner">
+            <div class="golden-rule-badge">Regla de Oro de Amaterra</div>
+            <blockquote class="golden-rule-quote">
+              "La IA realiza trabajo auxiliar; <strong>la autoría, el criterio técnico y la responsabilidad profesional son 100% humanas</strong>."
+            </blockquote>
+            <p class="golden-rule-sub">
+              Ningún informe, diagnóstico, acta o propuesta se envía a un cliente o administración sin haber sido validado, contrastado y firmado por la/el técnico responsable de Amaterra.
+            </p>
+          </div>
+
+          <div class="section-header">
+            <span class="section-tag">Objetivo General</span>
+            <h1 class="section-title">Marco de Adopción y Gobernanza de Inteligencia Artificial</h1>
+            <p class="section-description">
+              Diseñar una forma común, segura y útil de trabajar con IA en Amaterra que permita ahorrar tiempo en tareas mecánicas y elevar la calidad de los entregables sin sustituir jamás el criterio profesional, agrícola y social del equipo.
+            </p>
+          </div>
+
+          <div class="grid-3" style="margin-top: 2rem;">
+            <div class="card" style="border-top: 4px solid var(--color-emerald); cursor: pointer;" onclick="AmaterraApp.switchTab('editorial')">
+              <div class="card-header">
+                <span class="badge badge-green">Proyecto 1</span>
+                <span style="font-size: 1.3rem;">📐</span>
+              </div>
+              <h3 class="card-title">Sistema Editorial & Estilo Amaterriense</h3>
+              <p style="font-size: 0.88rem; margin: 0.5rem 0 1rem; color: var(--text-muted);">
+                Alinea el ADN de Amaterra con los criterios clave del Estilo Amaterriense para informes técnicos excelentes y auto-revisión ágil.
+              </p>
+              <span class="btn btn-outline" style="width: 100%;">Probar Evaluador Editorial →</span>
+            </div>
+
+            <div class="card" style="border-top: 4px solid var(--color-terracotta); cursor: pointer;" onclick="AmaterraApp.switchTab('pipeline')">
+              <div class="card-header">
+                <span class="badge badge-terracotta">Proyecto 2</span>
+                <span style="font-size: 1.3rem;">🎙️</span>
+              </div>
+              <h3 class="card-title">Generador de Actas de Audio</h3>
+              <p style="font-size: 0.88rem; margin: 0.5rem 0 1rem; color: var(--text-muted);">
+                Pipeline de visitas de campo (.mp3 bilingüe con ruido y jerga de campo ➔ borrador de acta maquetada estructurada).
+              </p>
+              <span class="btn btn-outline" style="width: 100%;">Abrir Simulador de Audio →</span>
+            </div>
+
+            <div class="card" style="border-top: 4px solid #3b82f6; cursor: pointer;" onclick="AmaterraApp.switchTab('decision')">
+              <div class="card-header">
+                <span class="badge badge-blue">Técnicos</span>
+                <span style="font-size: 1.3rem;">🧭</span>
+              </div>
+              <h3 class="card-title">Matriz de Decisión Rápida</h3>
+              <p style="font-size: 0.88rem; margin: 0.5rem 0 1rem; color: var(--text-muted);">
+                Asistente guiado interactivo para determinar en 3 pasos si usar IA, qué nivel corresponde y la seguridad de los datos.
+              </p>
+              <span class="btn btn-outline" style="width: 100%;">Iniciar Árbol de Decisión →</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 3rem;">
+            <h2 style="margin-bottom: 1rem; font-size: 1.4rem;">Las Tres Capas del Documento Técnico</h2>
+            <div class="layers-visualizer">
+              <div class="doc-layer-box layer-1-human">
+                <div class="doc-layer-header">
+                  <span class="doc-layer-title">🌱 Capa 1: Contenido</span>
+                  <span class="badge badge-terracotta">100% Humano</span>
+                </div>
+                <p style="font-size: 0.92rem; color: var(--text-main);">Datos de clientes, entrevistas de campo y fuentes reales observadas in situ.</p>
+              </div>
+              <div class="doc-layer-box layer-2-reasoning">
+                <div class="doc-layer-header">
+                  <span class="doc-layer-title">🔍 Capa 2: Razonamiento</span>
+                  <span class="badge badge-amber">Revisión Crítica (IA)</span>
+                </div>
+                <p style="font-size: 0.92rem; color: var(--text-main);">Control de calidad argumental: detectar contradicciones, huecos en las conclusiones y validar la solidez del informe.</p>
+              </div>
+              <div class="doc-layer-box layer-3-communication">
+                <div class="doc-layer-header">
+                  <span class="doc-layer-title">✍️ Capa 3: Comunicación</span>
+                  <span class="badge badge-green">Facilitador IA</span>
+                </div>
+                <p style="font-size: 0.92rem; color: var(--text-main);">Estructura, adaptación de registro según destinatario (ayuntamientos, CCAA, cooperativas) y claridad.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. MATURITY LEVELS -->
+        <section id="section-maturity" class="view-section">
+          <div class="section-header">
+            <span class="section-tag">Modelo de Madurez</span>
+            <h1 class="section-title">Los 3 Niveles de Relación con la IA</h1>
+            <p class="section-description">
+              Evolución progresiva desde la autonomía individual del técnico hasta la automatización supervisada de procesos técnicos complejos.
+            </p>
+          </div>
+
+          <div class="maturity-pyramid-container" id="maturity-levels-list"></div>
+        </section>
+
+        <!-- 3. EDITORIAL SYSTEM & RUBRIC EVALUATOR -->
+        <section id="section-editorial" class="view-section">
+          <div class="section-header">
+            <span class="section-tag">Zoom Metodológico (Nivel 2)</span>
+            <h1 class="section-title">El Sistema Editorial: Estilo Amaterriense</h1>
+            <p class="section-description">
+              El Nivel 2 es el núcleo de la consultoría: <strong>no busca que la IA clone el estilo de una persona, sino convertir el criterio de excelencia de Amaterra en un estándar compartido.</strong>
+            </p>
+          </div>
+
+          <div class="rubric-evaluator-wrapper">
+            <div class="evaluator-top-bar">
+              <div>
+                <h3 style="font-size: 1.25rem; color: var(--text-main); margin-bottom: 0.25rem;">🛠️ Evaluador Editorial de Informes Técnicos</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Auditoría interactiva en tiempo real sobre los 6 criterios de ejemplo del Estilo Amaterriense.</p>
+              </div>
+              
+              <div class="sample-selector">
+                <label for="rubric-sample-select" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Cargar ejemplo:</label>
+                <select id="rubric-sample-select" class="select-input"></select>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+              <div class="score-meter">
+                <div class="score-circle" id="rubric-score-val">0%</div>
+                <div>
+                  <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-faint); font-weight: 700;">Cumplimiento ADN Amaterra</div>
+                  <div id="rubric-score-status" style="font-size: 0.9rem; font-weight: 600; color: var(--text-main);">Evaluando documento...</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn btn-outline" onclick="AmaterraApp.evaluator.loadSample('perfect')">✨ Caso Óptimo</button>
+                <button class="btn btn-outline" onclick="AmaterraApp.evaluator.loadSample('flawed')">⚠️ Caso con Errores</button>
+              </div>
+            </div>
+
+            <div class="editor-split-view">
+              <div class="text-editor-box">
+                <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">
+                  Borrador del Documento Técnico
+                </div>
+                <textarea id="rubric-input-text" placeholder="Pega aquí el informe o borrador técnico..."></textarea>
+              </div>
+
+              <div>
+                <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">
+                  Estilo Amaterriense (6 Criterios de Ejemplo)
+                </div>
+                <div class="rubric-checklist" id="rubric-checklist-container"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. AUDIO PIPELINE SIMULATOR -->
+        <section id="section-pipeline" class="view-section">
+          <div class="section-header">
+            <span class="section-tag">Proyecto 2 · Automatización (Nivel 3)</span>
+            <h1 class="section-title">Generador de Actas de Campo desde Audio (.mp3)</h1>
+            <p class="section-description">
+              Convertir audios de visita de campo en borrador de acta maquetada estructurada resolviendo bilingüismo, ruido acústico y jerga agrosocial.
+            </p>
+          </div>
+
+          <div class="audio-pipeline-container">
+            <div class="audio-controls-panel">
+              <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <label for="audio-scenario-select" style="font-size: 0.85rem; font-weight: 700; color: var(--text-main);">Escenario de Audio:</label>
+                <select id="audio-scenario-select" class="select-input"></select>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <button id="audio-noise-filter-btn" class="btn btn-primary" style="font-size: 0.82rem;">🛡️ Filtro de Ruido: ACTIVO</button>
+                <button id="audio-play-btn" class="btn btn-outline">▶️ Reproducir Simulación</button>
+                <button id="audio-run-pipeline-btn" class="btn btn-terracotta">⚡ Procesar Pipeline IT</button>
+              </div>
+            </div>
+
+            <div id="audio-scenario-meta" style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.25rem;"></div>
+            <div class="waveform-display" id="audio-waveform-canvas"></div>
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-faint); margin-top: -1rem; margin-bottom: 1.5rem; padding: 0 0.5rem;">
+              <span>00:00:00</span>
+              <span id="audio-time-counter">00:00:00</span>
+            </div>
+
+            <div class="pipeline-steps-flow">
+              <div class="pipeline-step-box" id="pipeline-step-1">
+                <div class="step-num-pill">1</div>
+                <strong style="font-size: 0.88rem; color: var(--text-main);">Ingesta de Audio</strong>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Carga .mp3 desde móvil en campo</span>
+              </div>
+              <div class="pipeline-step-box" id="pipeline-step-2">
+                <div class="step-num-pill">2</div>
+                <strong style="font-size: 0.88rem; color: var(--text-main);">Aislamiento & Bilingüismo</strong>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Filtro de viento y traducción simultánea</span>
+              </div>
+              <div class="pipeline-step-box" id="pipeline-step-3">
+                <div class="step-num-pill">3</div>
+                <strong style="font-size: 0.88rem; color: var(--text-main);">Extracción de Jerga</strong>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Parcelas, patógenos y materias activas</span>
+              </div>
+              <div class="pipeline-step-box active" id="pipeline-step-4">
+                <div class="step-num-pill">4</div>
+                <strong style="font-size: 0.88rem; color: var(--text-main);">Acta Maquetada</strong>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Borrador estructurado para firma del técnico</span>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div>
+                <div class="card" style="margin-bottom: 1.25rem;">
+                  <h4 style="font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--text-main);">🗣️ Transcripción en Bruto (Mezcla Idiomática)</h4>
+                  <div id="audio-raw-snippet"></div>
+                </div>
+
+                <div class="card">
+                  <h4 style="font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--text-main);">🏷️ Entidades Agronómicas Identificadas</h4>
+                  <div id="audio-entities-chips"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="minute-preview-paper" id="audio-minute-rendered"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. DECISION TREE WIZARD -->
+        <section id="section-decision" class="view-section">
+          <div class="section-header">
+            <span class="section-tag">Guía de Decisión Rápida</span>
+            <h1 class="section-title">Matriz de Decisión para el Técnico</h1>
+            <p class="section-description">
+              ¿Tienes una tarea entre manos? Responde las preguntas para conocer al instante si puedes usar IA, qué nivel aplicar y las salvaguardas requeridas.
+            </p>
+          </div>
+
+          <div class="wizard-box">
+            <div id="decision-wizard-content"></div>
+          </div>
+        </section>
+
+        <!-- 6. GOVERNANCE & DATA SEMAPHORE -->
+        <section id="section-governance" class="view-section">
+          <div class="section-header">
+            <span class="section-tag">Seguridad y Privacidad</span>
+            <h1 class="section-title">Gobernanza y Semáforo de Datos</h1>
+            <p class="section-description">
+              Clasificación obligatoria del riesgo de la información y salvaguardas técnicas corporativas.
+            </p>
+          </div>
+
+          <div class="grid-3" id="governance-semaphore-grid"></div>
+        </section>
+
+        <!-- 7. ROLES & AGILE CYCLE -->
+        <section id="section-roles" class="view-section">
+          <div class="section-header">
+            <span class="section-tag">Organización y Flujo</span>
+            <h1 class="section-title">Reparto de Roles y Circuito Operativo Ágil</h1>
+            <p class="section-description">
+              Coordinación fluida entre la metodología de Neus, la validación del equipo técnico y la gobernanza de IT.
+            </p>
+          </div>
+
+          <div class="roles-grid" id="roles-grid-container"></div>
+          <div id="antipatterns-container"></div>
+        </section>
+
+        <!-- 8. ROADMAP & TEAM WORKSHOP -->
+        <section id="section-roadmap" class="view-section">
+          <div class="section-header">
+            <span class="section-tag">Despliegue y Dinámica</span>
+            <h1 class="section-title">Roadmap de Implementación y Sesión de Equipo</h1>
+            <p class="section-description">
+              Hoja de ruta estructurada en fases y banco de preguntas reflexivas para dinamizar el taller con el equipo.
+            </p>
+          </div>
+
+          <div class="roadmap-flow" id="roadmap-flow-container"></div>
+          <div class="workshop-questions-grid" id="workshop-questions-container"></div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <div class="footer-content">
+          <div>
+            <strong>Amaterra Consultoría Agrosocial</strong> · Marco Integral de Trabajo con IA v1.0.0
+            <div style="font-size: 0.78rem; color: var(--text-faint); margin-top: 0.25rem;">
+              Liderazgo metodológico: Neus · Gobernanza e infraestructura: IT & Digital Strategy
+            </div>
+          </div>
+          <div class="footer-tags">
+            <span>🌱 Criterio Humano 100%</span>
+            <span>🔒 Zero Data Retention</span>
+            <span>⚖️ Estilo Amaterriense</span>
+          </div>
+        </div>
+      </footer>
+    </div><!-- /dashboard-view -->
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/rubric-evaluator.js"></script>
+  <script src="js/audio-pipeline.js"></script>
+  <script src="js/decision-wizard.js"></script>
+  <script src="js/export-tools.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+/* ==========================================================================
+   AMATERRA CONSULTORÍA AGROSOCIAL - RESPONSIVE STYLES
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .roadmap-flow {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pipeline-steps-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .nav-tab-list {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .grid-3, .grid-4, .roles-grid, .agile-cycle-steps, .workshop-questions-grid {
+    grid-template-columns: 1fr;
+  }
+  .editor-split-view {
+    grid-template-columns: 1fr;
+  }
+  .roadmap-flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Presentation Responsive Enhancements */
+@media (max-width: 1024px) {
+  .presentation-overlay {
+    padding: 2rem 2.5rem 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.25rem 1rem 3rem;
+  }
+  .golden-rule-banner {
+    padding: 1.5rem;
+  }
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  .wizard-options-grid {
+    grid-template-columns: 1fr;
+  }
+  .roadmap-flow {
+    grid-template-columns: 1fr;
+  }
+  .pipeline-steps-flow {
+    grid-template-columns: 1fr;
+  }
+  .evaluator-top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sample-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .level-card {
+    flex-direction: column;
+  }
+  .level-indicator {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 0.75rem;
+  }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-tags {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Presentation Mobile Adjustments */
+  .presentation-overlay {
+    padding: 1.25rem 1rem 5.5rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .presentation-slide-wrapper {
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: auto;
+    padding-bottom: 2rem;
+  }
+  .presentation-overlay h1 {
+    font-size: 1.95rem !important;
+    margin: 1rem 0 !important;
+  }
+  .presentation-overlay h2 {
+    font-size: 1.65rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .presentation-overlay .card,
+  .presentation-overlay .doc-layer-box,
+  .presentation-overlay .antipattern-card {
+    padding: 1.25rem 1rem !important;
+  }
+  .presentation-overlay .golden-rule-badge {
+    font-size: 0.8rem !important;
+    padding: 0.3rem 0.85rem !important;
+  }
+  .presentation-controls {
+    bottom: 1rem;
+    padding: 0.35rem 0.75rem;
+    gap: 0.4rem;
+    width: calc(100% - 2rem);
+    max-width: 380px;
+    justify-content: space-between;
+  }
+  .presentation-controls button {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.78rem !important;
+  }
+  .presentation-controls span {
+    font-size: 0.8rem !important;
+  }
+  .presentation-nav-hint {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .presentation-overlay {
+    padding: 1rem 0.75rem 5.25rem;
+  }
+  .presentation-slide-wrapper {
+    padding-bottom: 1.5rem;
+  }
+  .presentation-overlay h1 {
+    font-size: 1.65rem !important;
+  }
+  .presentation-overlay h2 {
+    font-size: 1.4rem !important;
+  }
+  .presentation-overlay p {
+    font-size: 0.88rem !important;
+  }
+}
+
+@media print {
+  .app-header, .header-actions, .rubric-evaluator-wrapper .evaluator-top-bar, .wizard-box .wizard-options-grid, .presentation-controls {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .card, .level-card, .doc-layer-box, .minute-preview-paper {
+    border: 1px solid #cccccc !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+  .view-section {
+    display: block !important;
+    margin-bottom: 2rem;
+  }
+}
